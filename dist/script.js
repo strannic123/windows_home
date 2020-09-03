@@ -17811,7 +17811,7 @@ window.addEventListener('DOMContentLoaded', function () {
   "use strict";
 
   var modalState = {};
-  var deadline = '2021-01-01';
+  var deadline = '2020-12-18';
   Object(_modules_changeModalState__WEBPACK_IMPORTED_MODULE_4__["default"])(modalState);
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider ', '.glazing_block', '.glazing_content', 'active');
@@ -18058,12 +18058,14 @@ var images = function images() {
 
     if (target && target.classList.contains('preview')) {
       imagePopup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
       var path = target.parentNode.getAttribute('href');
       bigImg.setAttribute('src', path);
     }
 
     if (target && target.matches('div.popup')) {
       imagePopup.style.display = 'none';
+      document.body.style.overflow = '';
     }
   });
 };
@@ -18258,6 +18260,7 @@ var timer = function timer(id, deadline) {
         hours = timer.querySelector('#hours'),
         days = timer.querySelector('#days'),
         timeInterval = setInterval(updateClock, 1000);
+    updateClock();
 
     function updateClock() {
       var t = getTimeRemaining(endtime);

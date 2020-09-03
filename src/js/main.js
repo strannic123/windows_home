@@ -9,7 +9,7 @@ import images from "./modules/images";
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
     let modalState = {};
-    let  deadline = '2021-01-01';
+    let  deadline = '2020-12-18';
 
 
     changeModalState(modalState);
